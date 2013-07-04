@@ -21,6 +21,10 @@ body {
     letter-spacing: -1px;
 }
 
+.dashboard-title {
+    text-align: center;
+}
+
 .widget {
     position: absolute;
     height: 80%;

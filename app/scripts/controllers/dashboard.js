@@ -64,12 +64,12 @@ angular.module('myvestDashboardApp')
 
       //Queue up this element to be displayed next
       var moveToNext = function(element){
-        element.style.display = "none";
+        element.style.visibility = "hidden";
         element.style.left = clientWidth + "px";
       };
 
       var moveToCurrent = function(element){
-        element.style.display = "block";
+        element.style.visibility = "visible";
         element.style.left = ((clientWidth/2) - (parseInt(element.style.width)/2)) + "px";
       };
 
