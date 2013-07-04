@@ -4,7 +4,7 @@ angular.module('myvestDashboardApp')
   .controller('DashboardController',function ($scope, $document, $timeout) {
       var clientWidth = $document.find("body")[0].clientWidth; //Get the client's width
 
-      var widgets = ["helloworld", "countdown", "helloworld", "countdown"]; //Master list of widgets -- add new ones here
+      var widgets = ["helloworld", "countdown"]; //Master list of widgets -- add new ones here
       var nextWidgetIndex = 1;
 
       //Get the widgets
@@ -21,6 +21,10 @@ angular.module('myvestDashboardApp')
         //Initialize & move first 2 widgets into place
         $scope.firstWidget = getFileLocation(0);
         $scope.secondWidget = getFileLocation(1);
+
+        $scope.currentWidget = widgets[0];
+        $scope.nextWidget = widgets[1];
+
         moveToNext(nextWidget);
         moveToCurrent(currentWidget);
       };
@@ -30,10 +34,9 @@ angular.module('myvestDashboardApp')
         moveToCurrent(nextWidget);
         moveToDone(currentWidget);
 
-        nextWidgetIndex++;
-        if(nextWidgetIndex == widgets.length) {
-          nextWidgetIndex = 0;
-        }
+        $scope.completedWidget = widgets[(widgets.length + nextWidgetIndex-1) % widgets.length];
+        $scope.currentWidget = widgets[nextWidgetIndex];
+        nextWidgetIndex = (nextWidgetIndex + 1) % widgets.length;
 
         //Swap the widgets (so next is in front of current)
         var tempWidget = currentWidget;
@@ -53,6 +56,8 @@ angular.module('myvestDashboardApp')
         } else {
           $scope.secondWidget = widgetFileLocation;
         }
+        //Fires an event for the next widget based on the view's file name.
+        $scope.nextWidget = widgets[nextWidgetIndex];
         $timeout(showNextElement, 4000); //Start the cycle again
       };
 
@@ -79,3 +84,24 @@ angular.module('myvestDashboardApp')
 
       initializeFirstWidgets();
   });
+
+//Event-handling functions
+var onWidgetNext = function($scope, widgetName, f) {
+  onWidgetEvent($scope, "nextWidget", widgetName, f);
+};
+
+var onWidgetCurrent = function($scope, widgetName, f) {
+  onWidgetEvent($scope, "currentWidget", widgetName, f);
+};
+
+var onWidgetCompleted = function($scope, widgetName, f) {
+  onWidgetEvent($scope, "completedWidget", widgetName, f);
+};
+
+var onWidgetEvent = function($scope, eventType, widgetName, f) {
+  $scope.$watch(eventType, function(nextWidgetName) {
+    if(nextWidgetName == widgetName) {
+      f();
+    }
+  });
+};

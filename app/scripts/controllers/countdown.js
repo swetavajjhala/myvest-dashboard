@@ -3,6 +3,18 @@
 angular.module('myvestDashboardApp')
     .controller('CountdownWidgetController',function ($scope) {
 
+      onWidgetCompleted($scope, "countdown", function() {
+        console.log("thanks for calling me!");
+      });
+
+      onWidgetCurrent($scope, "countdown", function() {
+        console.log("call me now!");
+      });
+
+      onWidgetNext($scope, "countdown", function() {
+        console.log("call me next!");
+      });
+
       //Months are zero-indexed
       var eventDate = moment([2013, 6, 12]);
       var today = moment(); // similar to new Date();
