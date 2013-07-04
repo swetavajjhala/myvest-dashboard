@@ -4,7 +4,7 @@ angular.module('myvestDashboardApp')
   .controller('DashboardController',function ($scope, $document, $timeout) {
       var clientWidth = $document.find("body")[0].clientWidth; //Get the client's width
 
-      var widgets = ["helloworld", "countdown"]; //Master list of widgets -- add new ones here
+      var widgets = ["countdown", "helloworld"]; //Master list of widgets -- add new ones here
       var nextWidgetIndex = 1;
 
       //Get the widgets
@@ -61,7 +61,7 @@ angular.module('myvestDashboardApp')
         $timeout(showNextElement, 4000); //Start the cycle again
       };
 
-      $timeout(showNextElement, 5000); //Transition set to every 5s
+      $timeout(showNextElement, 500000); //Transition set to every 5s
 
       var getFileLocation = function(counter) {
         return "views/" + widgets[counter] + ".html";

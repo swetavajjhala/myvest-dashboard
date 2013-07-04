@@ -1,3 +1,11 @@
 <div ng-controller="CountdownWidgetController">
-  <h1>{{months}} months, {{weeks}} weeks, {{days}} days, {{hours}} hours until {{eventName}}</h1>
+
+  <div ng-hide="isEditing">
+    <i class="icon-pencil" ng-click="isEditing=true"></i>
+    <h1>{{months}} months, {{weeks}} weeks, {{days}} days, {{hours}} hours until {{eventName}}</h1>
+  </div>
+
+  <div ng-show="isEditing">
+    <button class="button" ng-click="isEditing=false">Save</button>
+  </div>
 </div>
