@@ -61,7 +61,7 @@ angular.module('myvestDashboardApp')
         $timeout(showNextElement, 4000); //Start the cycle again
       };
 
-      $timeout(showNextElement, 500000); //Transition set to every 5s
+      $timeout(showNextElement, 5000); //Transition set to every 5s
 
       var getFileLocation = function(counter) {
         return "views/" + widgets[counter] + ".html";

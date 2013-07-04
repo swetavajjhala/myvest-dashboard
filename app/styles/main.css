@@ -31,4 +31,9 @@ body {
     border: 3px solid black;
     transition-property: left;
     transition-duration: 1s;
+    border-radius: 5px;
+}
+
+.widgetSettings {
+    padding: 10px;
 }

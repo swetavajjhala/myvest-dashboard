@@ -1,11 +1,30 @@
 <div ng-controller="CountdownWidgetController">
 
-  <div ng-hide="isEditing">
+  <div class="widgetContent" ng-hide="isEditing">
     <i class="icon-pencil" ng-click="isEditing=true"></i>
     <h1>{{months}} months, {{weeks}} weeks, {{days}} days, {{hours}} hours until {{eventName}}</h1>
   </div>
 
-  <div ng-show="isEditing">
-    <button class="button" ng-click="isEditing=false">Save</button>
+  <div class="widgetSettings" ng-show="isEditing">
+    <h2>Countdown Settings</h2>
+    <form class="form-horizontal">
+      <div class="control-group">
+        <label class="control-label" for="eventName">Event Name</label>
+        <div class="controls">
+          <input type="text" id="eventName" placeholder="Hackathon, 13.0, etc." ng-model="eventName">
+        </div>
+      </div>
+      <div class="control-group">
+        <label class="control-label" for="eventDate">Date</label>
+        <div class="controls">
+          <input type="date" id="eventDate" ng-model="eventDate">
+        </div>
+      </div>
+      <div class="control-group">
+        <div class="controls">
+          <button class="button" ng-click="isEditing=false">Save</button>
+        </div>
+      </div>
+    </form>
   </div>
 </div>

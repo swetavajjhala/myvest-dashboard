@@ -1,7 +1,8 @@
 'use strict';
 
 angular.module('myvestDashboardApp')
-    .controller('CountdownWidgetController',function ($scope) {
+    .controller('CountdownWidgetController', function ($scope) {
+      $scope.eventDate = new Date();
 
       onWidgetCompleted($scope, "countdown", function() {
         //Execute this code when widget has finished displaying
@@ -9,9 +10,20 @@ angular.module('myvestDashboardApp')
 
       onWidgetCurrent($scope, "countdown", function() {
         //Execute this code when widget is displaying currently
+        recalculateCountdown();
+      });
 
+      $scope.$watch('eventDate', function(newEventDate) {
+        recalculateCountdown();
+      });
+
+      onWidgetNext($scope, "countdown", function() {
+        //Execute this code when widget will display next
+      });
+
+      var recalculateCountdown = function() {
         //Months are zero-indexed in moment
-        var eventDate = moment([2013, 6, 12]);
+        var eventDate = moment($scope.eventDate);
         var today = moment(); // similar to new Date();
 
         $scope.months=eventDate.diff(today, "months");
@@ -22,9 +34,5 @@ angular.module('myvestDashboardApp')
         eventDate.subtract($scope.days, "days");
         $scope.hours=eventDate.diff(today, "hours");
         $scope.eventName="Hackathon";
-      });
-
-      onWidgetNext($scope, "countdown", function() {
-        //Execute this code when widget will display next
-      });
+      };
 });
