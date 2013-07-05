@@ -33,6 +33,5 @@ angular.module('myvestDashboardApp')
         $scope.days=eventDate.diff(today, "days");
         eventDate.subtract($scope.days, "days");
         $scope.hours=eventDate.diff(today, "hours");
-        $scope.eventName="Hackathon";
       };
 });
