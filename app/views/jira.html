@@ -3,21 +3,21 @@
     <table class="table table-striped">
         <thead>
         <tr>
+            <th>Priority</th>
             <th>Key</th>
             <th>Summary</th>
             <th>Status</th>
             <th>Assignee</th>
             <th>Reporter</th>
-            <th>Priority</th>
         </tr>
         </thead>
         <tr ng-repeat="issue in issues">
+            <td><span class="label label-important">{{issue.fields.priority.name}}</span></td>
             <td><a href="http://jira.myvest.com:8882/browse/{{issue.key}}" target="_blank">{{issue.key}}</a></td>
             <td>{{issue.fields.summary}}</td>
             <td>{{issue.fields.status.name}}</td>
             <td>{{issue.fields.assignee.displayName}}</td>
             <td>{{issue.fields.reporter.displayName}}</td>
-            <td>{{issue.fields.priority.name}}</td>
         </tr>
     </table>
 </div>
