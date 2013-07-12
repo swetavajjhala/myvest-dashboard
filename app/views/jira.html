@@ -1,7 +1,21 @@
 <h1>JIRA (widget #3)</h1>
-<table class="table table-striped">
-    <tr ng-repeat="item in items">
-        <td>{{item.key}}</td>
-        <!-- <td>{{item.size}}</td> -->
-    </tr>
-</table>
+<div ng-controller="JiraWidgetController">
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>Key</th>
+            <th>Summary</th>
+            <th>Assignee</th>
+            <th>Reporter</th>
+            <th>Priority</th>
+        </tr>
+        </thead>
+        <tr ng-repeat="issue in issues">
+            <td>{{issue.key}}</td>
+            <td>{{issue.summary}}</td>
+            <td>{{issue.assignee}}</td>
+            <td>{{issue.reporter}}</td>
+            <td>{{issue.priority}}</td>
+        </tr>
+    </table>
+</div>
