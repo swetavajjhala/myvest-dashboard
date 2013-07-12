@@ -33,7 +33,6 @@ body {
 .widget {
     position: absolute;
     height: 80%;
-    border: 3px solid black;
     transition-property: left;
     transition-duration: 1s;
     border-radius: 5px;
@@ -41,4 +40,8 @@ body {
 
 .widgetSettings {
     padding: 10px;
+}
+
+#widgetContainer {
+   margin-top: 4em;
 }
