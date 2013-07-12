@@ -2,7 +2,43 @@
 
   <div class="widgetContent" ng-hide="isEditing">
     <i class="icon-pencil" ng-click="isEditing=true"></i>
-    <h1>{{months}} months, {{weeks}} weeks, {{days}} days, {{hours}} hours until {{eventName}}</h1>
+  </div>
+  <div style="margin-top: 20%">
+    <div class="row">
+      <div style="text-align: center">
+        <h2>Countdown to {{eventName}}!</h2>
+        </br>
+        <div class="row">
+          <div class="text-info span1 offset4">
+            <h1>{{days}}</h1>
+          </div>
+          <div class="text-info span1 offset1">
+            <h1>{{hours}}</h1>
+          </div>
+          <div class="text-info span1 offset1">
+            <h1>{{minutes}}</h1>
+          </div>
+          <div class="text-error span1 offset1">
+            <h1>{{seconds}}</h1>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="span1 offset4">
+            <h4 class="">Days</h4>
+          </div>
+          <div class="span1 offset1">
+            <h4>Hours</h4>
+          </div>
+          <div class="span1 offset1">
+            <h4>Minutes</h4>
+          </div>
+          <div class="span1 offset1">
+            <h4>Seconds</h4>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 
   <div class="widgetSettings" ng-show="isEditing">
@@ -10,12 +46,14 @@
     <form class="form-horizontal">
       <div class="control-group">
         <label class="control-label" for="eventName">Event Name</label>
+
         <div class="controls">
           <input type="text" id="eventName" placeholder="Hackathon, 13.0, etc." ng-model="eventName">
         </div>
       </div>
       <div class="control-group">
         <label class="control-label" for="eventDate">Date</label>
+
         <div class="controls">
           <input type="date" id="eventDate" ng-model="eventDate">
         </div>
