@@ -4,7 +4,7 @@ angular.module('myvestDashboardApp')
   .controller('DashboardController',function ($scope, $document, $timeout) {
       var clientWidth = $document.find("body")[0].clientWidth; //Get the client's width
 
-      var widgets = ["bart", "jira", "countdown", "helloworld"]; //Master list of widgets -- add new ones here
+      var widgets = ["bart", "jira", "countdown"]; //Master list of widgets -- add new ones here
       var nextWidgetIndex = 1;
 
       //Get the widgets

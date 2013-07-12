@@ -1,4 +1,4 @@
-<h1>JIRA (widget #3)</h1>
+<h2 align="center">Trending JIRA Issues</h2>
 <div ng-controller="JiraWidgetController">
     <table class="table table-striped">
         <thead>
@@ -11,7 +11,7 @@
         </tr>
         </thead>
         <tr ng-repeat="issue in issues">
-            <td>{{issue.key}}</td>
+            <td><a href="http://jira.myvest.com:8882/browse/{{issue.key}}" target="_blank">{{issue.key}}</a></td>
             <td>{{issue.fields.summary}}</td>
             <td>{{issue.fields.assignee.displayName}}</td>
             <td>{{issue.fields.reporter.displayName}}</td>
