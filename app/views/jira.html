@@ -12,10 +12,10 @@
         </thead>
         <tr ng-repeat="issue in issues">
             <td>{{issue.key}}</td>
-            <td>{{issue.summary}}</td>
-            <td>{{issue.assignee}}</td>
-            <td>{{issue.reporter}}</td>
-            <td>{{issue.priority}}</td>
+            <td>{{issue.fields.summary}}</td>
+            <td>{{issue.fields.assignee.displayName}}</td>
+            <td>{{issue.fields.reporter.displayName}}</td>
+            <td>{{issue.fields.priority.name}}</td>
         </tr>
     </table>
 </div>
