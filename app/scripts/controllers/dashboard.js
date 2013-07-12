@@ -58,10 +58,10 @@ angular.module('myvestDashboardApp')
         }
         //Fires an event for the next widget based on the view's file name.
         $scope.nextWidget = widgets[nextWidgetIndex];
-        $timeout(showNextElement, 4000); //Start the cycle again
+        $timeout(showNextElement, 10000); //Start the cycle again
       };
 
-      $timeout(showNextElement, 5000); //Transition set to every 5s
+      $timeout(showNextElement, 10000); //Transition set to every 5s
 
       var getFileLocation = function(counter) {
         return "views/" + widgets[counter] + ".html";
