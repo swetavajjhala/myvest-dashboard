@@ -2,7 +2,9 @@
   "name": "myvest-dashboard",
   "version": "0.0.0",
   "dependencies": {
-    "grunt-karma": "~0.4.5"
+    "grunt-karma": "~0.4.5",
+    "express": "3.1.0",
+    "socket.io": "0.9.13"
   },
   "devDependencies": {
     "grunt": "~0.4.1",
@@ -26,7 +28,12 @@
     "matchdep": "~0.1.2",
     "connect-livereload": "~0.2.0",
     "grunt-google-cdn": "~0.2.0",
-    "grunt-ngmin": "~0.0.2"
+    "grunt-ngmin": "~0.0.2",
+    "grunt-contrib-livereload": "0.1.2",
+    "grunt-contrib-nodeunit": "~0.1.2",
+    "grunt-jsbeautifier": "~0.1.5",
+    "grunt-express": "~0.2.0",
+    "grunt-regarde": "~0.1.1"
   },
   "engines": {
     "node": ">=0.8.0"
