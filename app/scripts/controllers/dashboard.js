@@ -51,7 +51,7 @@ angular.module('myvestDashboardApp')
         //Move next widget to next in line
         moveToNext(nextWidget);
         var widgetFileLocation = getFileLocation(nextWidgetIndex);
-        if(nextWidgetIndex % 2 == 0) {
+        if(nextWidget === firstWidget) {
           $scope.firstWidget = widgetFileLocation;
         } else {
           $scope.secondWidget = widgetFileLocation;
