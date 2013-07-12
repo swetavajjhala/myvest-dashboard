@@ -22,6 +22,10 @@ body {
     letter-spacing: -1px;
 }
 
+.even {
+    background-color: #C7D4EE;
+}
+
 .dashboard-title {
     text-align: center;
 }

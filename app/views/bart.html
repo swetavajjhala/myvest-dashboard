@@ -1,6 +1,6 @@
 <h1>
   <div class="row">
-    <div class="span12">Bart Schedule</div>
+    <div class="span10">Bart Schedule</div>
     <div class="span2" >
       <img width="100" height="100" src="http://www.511contracosta.org/wp-content/uploads/2010/07/BART-logo-large.jpg"/>
     </div>
@@ -8,7 +8,7 @@
 </h1>
 <div ng-controller="BartWidgetController">
   <h2>
-    {{schedule.station.name}}
+    {{schedule.root.station[0].name[0]}} Station
   </h2>
   <table class="table table-striped">
     <thead>
@@ -18,10 +18,12 @@
       <th>Minutes</th>
     </tr>
     </thead>
-    <tr class="lead text-info" ng-repeat="train in schedule.station.etd" ng-class-odd="'odd'" ng-class-even="'even'">
-      <td>{{train.destination}}</td>
-      <td>{{train.abbreviation}}</td>
-      <td>{{train.minuteString}}</td>
+    <br/>
+    <tr class="lead text-info" ng-repeat="train in schedule.root.station[0].etd" ng-class-odd="'odd'" ng-class-even="'even'">
+      <td style="vertical-align: middle">{{train.destination[0]}}</td>
+      <td style="vertical-align: middle">{{train.abbreviation[0]}}</td>
+      <td style="vertical-align: middle">{{train.minuteString}}</td>
+      <td height="30px"></td>
     </tr>
   </table>
   <footer>
