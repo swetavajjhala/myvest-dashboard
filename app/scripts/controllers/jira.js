@@ -246,7 +246,7 @@ angular.module('myvestDashboardApp')
                 "self": "http://jira.myvest.com:8882/rest/api/2/status/10002",
                 "description": "The issue has been completed by the developer and is now awaiting code review and verification",
                 "iconUrl": "http://jira.myvest.com:8882/images/icons/statuses/visible.png",
-                "name": "In Review",
+                "name": "Resolved",
                 "id": "10002"
               },
               "customfield_10090": null,
@@ -290,7 +290,7 @@ angular.module('myvestDashboardApp')
                   "16x16": "http://jira.myvest.com:8882/secure/useravatar?size=small&avatarId=10102",
                   "48x48": "http://jira.myvest.com:8882/secure/useravatar?avatarId=10102"
                 },
-                "displayName": "Nguyen Le",
+                "displayName": "Ken Sui",
                 "active": true
               },
               "customfield_10500": null,
@@ -456,7 +456,7 @@ angular.module('myvestDashboardApp')
                   "16x16": "http://jira.myvest.com:8882/secure/useravatar?size=small&avatarId=10102",
                   "48x48": "http://jira.myvest.com:8882/secure/useravatar?avatarId=10102"
                 },
-                "displayName": "Nguyen Le",
+                "displayName": "Ken Sui",
                 "active": true
               },
               "customfield_10500": null,
@@ -579,7 +579,7 @@ angular.module('myvestDashboardApp')
                 "self": "http://jira.myvest.com:8882/rest/api/2/status/10002",
                 "description": "The issue has been completed by the developer and is now awaiting code review and verification",
                 "iconUrl": "http://jira.myvest.com:8882/images/icons/statuses/visible.png",
-                "name": "In Review",
+                "name": "In Progress",
                 "id": "10002"
               },
               "customfield_10090": null,
@@ -709,7 +709,7 @@ angular.module('myvestDashboardApp')
                 "self": "http://jira.myvest.com:8882/rest/api/2/status/10002",
                 "description": "The issue has been completed by the developer and is now awaiting code review and verification",
                 "iconUrl": "http://jira.myvest.com:8882/images/icons/statuses/visible.png",
-                "name": "In Review",
+                "name": "Closed",
                 "id": "10002"
               },
               "customfield_10090": null,
