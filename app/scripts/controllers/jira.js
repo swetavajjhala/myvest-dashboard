@@ -17,20 +17,39 @@ angular.module('myvestDashboardApp')
       jsonp: 'callback'
     }); */
 
-    $.ajax({
+      $.ajax({
+        type: 'GET',
+        url: 'http://jira.myvest.com:8882/rest/api/2/search?jql=project=AMMO+AND+priority=Blocker+AND+status+in+(Open)&maxResults=1',
+        async: false,
+        dataType: 'jsonp',
+        contentType: 'application/json',
+        jsonpCallback: function(data2) {
+          var data = $.getJSON(data2);
+          console.log(data);
+          $scope.issues = [{"key": data.status,
+            "summary": data.status,
+            "assignee": data.status,
+            "reporter": data.status,
+            "priority": data.status},
+            {"key": "AMMO-23456", "summary": "Whatevers"}];
+        },
+        jsonp: 'callback'
+      });
+
+    /* $.ajax({
         type: 'GET',
         url: 'http://jira.myvest.com:8882/rest/api/2/search?jql=project=AMMO+AND+priority=Blocker+AND+status+in+(Open)&maxResults=1',
         dataType: 'jsonp',
-        jsonpCallback: 'function(data2) {' +
-          'var data = $.getJSON(data2);' +
-          'console.log(data);' +
-//          $scope.issues = [{"key": data.issues[0].key,
-//            "summary": data.issues[0].fields.summary,
-//            "assignee": data.issues[0].fields.assignee.displayName,
-//            "reporter": data.issues[0].fields.reporter.displayName,
-//            "priority": data.issues[0].fields.priority.name},
-//            {"key": "AMMO-23456", "summary": "Whatevers"}];
-        '}',
+        'jsonpCallback': function(data2) {
+          var data = $.getJSON(data2);
+          console.log(data);
+          $scope.issues = [{"key": data.issues[0].key,
+            "summary": data.issues[0].fields.summary,
+            "assignee": data.issues[0].fields.assignee.displayName,
+            "reporter": data.issues[0].fields.reporter.displayName,
+            "priority": data.issues[0].fields.priority.name},
+            {"key": "AMMO-23456", "summary": "Whatevers"}];
+        },
         jsonp: 'callback'
-     });
+     }); */
 });
